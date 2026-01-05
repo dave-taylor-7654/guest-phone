@@ -1,0 +1,8 @@
+# Audio processing
+# pyaudio
+# pydub
+
+# GPIO control for Raspberry Pi
+# RPi.GPIO
+
+# Uncomment packages as needed during development
