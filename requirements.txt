@@ -1,8 +1,6 @@
-# Audio processing
-# pyaudio
-# pydub
+# Audio I/O (requires system libportaudio2)
+sounddevice
+soundfile
+numpy
 
-# GPIO control for Raspberry Pi
-# RPi.GPIO
-
-# Uncomment packages as needed during development
+# GPIO is provided by the system (gpiozero + lgpio via --system-site-packages)

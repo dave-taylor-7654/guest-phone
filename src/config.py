@@ -1,0 +1,18 @@
+from pathlib import Path
+
+HOOK_PIN = 17
+
+AUDIO_DEVICE_NAME = "USB Audio Device"
+SAMPLE_RATE = 48000
+BLOCK_SIZE = 512
+
+GREETING_PATH = Path.home() / "greeting.wav"
+RECORDINGS_DIR = Path.home() / "recordings"
+
+MONITOR_GAIN = 0.4
+TONE_FREQ = 1000
+TONE_DURATION = 0.3
+TONE_AMPLITUDE = 0.1
+
+MAX_RECORDING_SECONDS = 180
+MIN_RECORDING_SECONDS = 2
