@@ -1,0 +1,17 @@
+[Unit]
+Description=Guest Phone Wedding Message Recorder
+After=sound.target local-fs.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/guest-phone
+ExecStart=/home/pi/guest-phone/.venv/bin/python -u -m src.main
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

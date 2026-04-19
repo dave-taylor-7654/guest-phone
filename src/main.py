@@ -32,12 +32,18 @@ def run_session(hook: Hook) -> None:
         start = time.monotonic()
         record_with_monitor(path, on_cradle, MAX_RECORDING_SECONDS)
         duration = time.monotonic() - start
+        timed_out = not on_cradle.is_set()
 
         if duration < MIN_RECORDING_SECONDS:
             path.unlink(missing_ok=True)
             print(f"[session] too short ({duration:.1f}s), discarded")
         else:
             print(f"[session] saved {path.name} ({duration:.1f}s)")
+
+        if timed_out:
+            print("[session] max duration reached, end tone")
+            play_tone(on_cradle)
+            hook.wait_for_cradle()
     finally:
         hook.clear_on_cradle()
 
